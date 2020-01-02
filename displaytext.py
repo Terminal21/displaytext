@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup as soup
 
 def telnet(txt):
     try:
-        telnet = telnetlib.Telnet('192.168.21.148')
+        telnet = telnetlib.Telnet('vfddisplay.lan')
     except:
-        logging.error('Cannot connect to display, make sure it is on the network with IP 192.168.21.148')
+        logging.error('Cannot connect to display, make sure it is on the network with vfddisplay.lan')
         return
     telnet.write('\n\n'.encode('latin1'))
     telnet.write(chr(0x0D).encode('latin1')) #0x0D clear; 0x0F All Display; 0x0B scroll; 
